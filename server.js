@@ -4,6 +4,10 @@ const PORT = process.env.PORT || 3003;
 const mongoose = require("mongoose");
 require("dotenv").config();
 
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static("client/build"));
+}
+
 mongoose
     .connect(process.env.mongodb_URI, {
         useNewUrlParser: true,
