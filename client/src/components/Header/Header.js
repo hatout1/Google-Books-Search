@@ -5,7 +5,7 @@ function Header() {
         <header>
             <nav className="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
                 <div className="container">
-                    <a className="navbar-brand logo" href="#">
+                    <a className="navbar-brand logo" href="/">
                         SANI STUDIO
                     </a>
                     <button
@@ -38,7 +38,7 @@ function Header() {
                 style={{
                     backgroundImage: "url('assets/img/book-op-001.jpg')",
                     color: "rgba(14,34,45,0.85)",
-                    minHeight: "400px"
+                    minHeight: "500px"
                 }}
             >
                 <div className="text">

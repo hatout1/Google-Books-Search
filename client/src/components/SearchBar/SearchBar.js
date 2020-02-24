@@ -4,13 +4,13 @@ function SearchBar() {
     return (
         <div className="container mt-5 mb-5">
             <div className="row">
-                <div class="col">
+                <div className="col">
                     <h1>Book Search</h1>
                     <span>Book Name</span>
-                    <div class="row padMar">
-                        <div class="col padMar">
-                            <div class="input-group">
-                                <div class="input-group-prepend"></div>
+                    <div className="row padMar">
+                        <div className="col padMar">
+                            <div className="input-group">
+                                <div className="input-group-prepend"></div>
                                 <input
                                     className="form-control autocomplete"
                                     type="text"
@@ -18,7 +18,7 @@ function SearchBar() {
                                 />
                                 <div className="input-group-append">
                                     <button
-                                        classNameName="btn btn-warning"
+                                        className="btn btn-warning"
                                         type="button"
                                     >
                                         <i className="fa fa-search"></i>

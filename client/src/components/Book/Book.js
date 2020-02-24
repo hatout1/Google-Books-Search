@@ -12,6 +12,7 @@ function Book() {
                                     <img
                                         className="rounded img-fluid"
                                         src="assets/img/hp.png"
+                                        alt="backgroundImage"
                                     />
                                 </div>
                                 <div className="col-lg-7">
@@ -19,7 +20,7 @@ function Book() {
                                     <div className="info">
                                         <span className="text-muted">
                                             by&nbsp;
-                                            <a href="#">
+                                            <a href="/">
                                                 <strong>John Smith</strong>
                                             </a>
                                         </span>
