@@ -16,7 +16,7 @@ mongoose
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.use("/", require("./routes/api-routes"));
+app.use("/api", require("./routes/api-routes"));
 
 app.listen(PORT, () => {
     console.log("listening at http://localhost:" + PORT);
