@@ -25,8 +25,8 @@ function Main() {
                     ) : appState.currentState === "home" ? (
                         <Home />
                     ) : (
-                        ""
-                    )}
+                                    ""
+                                )}
                 </div>
             </div>
         </div>
