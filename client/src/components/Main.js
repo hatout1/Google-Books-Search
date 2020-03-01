@@ -1,29 +1,32 @@
 import React, { useState, useEffect } from "react";
 import SearchBar from "./SearchBar/SearchBar";
 import Header from "./Header/Header";
-import Book from "./Book/Book";
+import Saved from "./Saved/Saved";
 import axios from "axios";
+import Home from "./Home/Home";
 
 function Main() {
-    const [link, modifyLink] = useState({
-        state: "search"
-    });
+    const [appState, changeState] = useState({ currentState: "home" });
 
-    useEffect(() => {
-        axios
-            .get("/api/all")
-            .then(res => console.log(res))
-            .catch();
-    });
+    const handleLink = linkName => {
+        changeState({ ...appState, currentState: linkName });
+    };
 
     return (
         <div className="container">
             <div className="row">
                 <div className="col">
-                    <Header />
-                    <SearchBar />
-                    {console.log(link.state)}
-                    <Book />
+                    <Header currentState={appState} changeLink={handleLink} />
+
+                    {appState.currentState === "search" ? (
+                        <SearchBar />
+                    ) : appState.currentState === "saved" ? (
+                        <Saved />
+                    ) : appState.currentState === "home" ? (
+                        <Home />
+                    ) : (
+                        ""
+                    )}
                 </div>
             </div>
         </div>

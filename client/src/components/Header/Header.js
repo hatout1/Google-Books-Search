@@ -1,6 +1,8 @@
 import React from "react";
 
-function Header() {
+function Header(props) {
+    console.log(props.currentState);
+
     return (
         <header>
             <nav className="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
@@ -19,12 +21,38 @@ function Header() {
                     <div className="collapse navbar-collapse" id="navcol-1">
                         <ul className="nav navbar-nav ml-auto">
                             <li className="nav-item" role="presentation">
-                                <a className="nav-link" href="index.html">
+                                <a
+                                    onClick={e => {
+                                        e.preventDefault();
+                                        props.changeLink("home");
+                                    }}
+                                    className="nav-link"
+                                    href="/"
+                                >
+                                    Home
+                                </a>
+                            </li>
+                            <li className="nav-item" role="presentation">
+                                <a
+                                    onClick={e => {
+                                        e.preventDefault();
+                                        props.changeLink("search");
+                                    }}
+                                    className="nav-link"
+                                    href="index.html"
+                                >
                                     Search
                                 </a>
                             </li>
                             <li className="nav-item" role="presentation">
-                                <a className="nav-link" href="index.html">
+                                <a
+                                    onClick={e => {
+                                        e.preventDefault();
+                                        props.changeLink("saved");
+                                    }}
+                                    className="nav-link"
+                                    href="index.html"
+                                >
                                     saved
                                 </a>
                             </li>
