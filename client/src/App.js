@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import axios from "axios";
 
 function App() {
-    // const [appState, setState] = useState("search");
+    // App State hooks
     const [apiResult, setApiResult] = useState([]);
-    const [book, setBook] = useState("javascript");
+    const [book, setBook] = useState("");
     const [apiKey, setApiKey] = useState(
         "AIzaSyAakxYQit1DRIQag9AXDESHnUc2P6lNwBk"
     );
@@ -30,22 +30,33 @@ function App() {
     return (
         <div className="App">
             <div className="container">
-                <div className="jumbotron">
-                    <h1>REACT Google Books</h1>
+                <div className="jumbotron text-center">
+                    <h1 className="display-4 font-weight-bold text-info">
+                        REACT Google Books
+                    </h1>
                 </div>
-                <input
-                    onChange={handleChange}
-                    className="form-control"
-                    type="text"
-                />
-                <button onClick={handleSubmit}>submit</button>
+                <div className="input-group mb-3">
+                    <input
+                        onChange={handleChange}
+                        className="form-control"
+                        placeholder="Search for"
+                        type="text"
+                    />
+                    <div className="input-group-append">
+                        <button
+                            onClick={handleSubmit}
+                            className="btn btn-outline-secondary"
+                        >
+                            submit
+                        </button>
+                    </div>
+                </div>
                 <ul>
                     {apiResult.map(book => (
                         <li key={book.id}>
                             <a href={book.volumeInfo.previewLink}>
                                 <img
                                     src={book.volumeInfo.imageLinks.thumbnail}
-                                    alt=""
                                 />
                             </a>
                         </li>
