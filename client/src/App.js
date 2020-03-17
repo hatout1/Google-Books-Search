@@ -27,6 +27,19 @@ function App() {
             .catch(err => console.error(err));
     };
 
+    const handlePostSubmit = e => {
+        axios
+            .post("/api/new", { bookId: "" })
+            .then(res => {
+                console.log(res);
+            })
+            .catch(err => console.log(err));
+    };
+
+    const sayHi = e => {
+        console.log(e.target.data);
+    };
+
     return (
         <div className="App">
             <div className="container">
@@ -69,7 +82,9 @@ function App() {
                                 className="card-body"
                                 style={{ position: "relative" }}
                             >
-                                <button
+                                {/* <button
+                                    data={book.id}
+                                    onClick={sayHi}
                                     className="btn btn-outline-info"
                                     style={{
                                         position: "absolute",
@@ -77,7 +92,7 @@ function App() {
                                     }}
                                 >
                                     + Save
-                                </button>
+                                </button> */}
                             </div>
                         </div>
                     ))}
