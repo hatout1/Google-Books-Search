@@ -51,17 +51,35 @@ function App() {
                         </button>
                     </div>
                 </div>
-                <ul>
+                <div className="row">
                     {apiResult.map(book => (
-                        <li key={book.id}>
-                            <a href={book.volumeInfo.previewLink}>
-                                <img
-                                    src={book.volumeInfo.imageLinks.thumbnail}
-                                />
-                            </a>
-                        </li>
+                        <div
+                            key={book.id}
+                            className="card col-xs-6 col-sm-4 col-md-3 col-lg-2 mt-5 mb-5"
+                            style={{ width: "18rem", margin: "0 10px" }}
+                        >
+                            <img
+                                className="card-img-top mb-3"
+                                src={book.volumeInfo.imageLinks.thumbnail}
+                                alt="Card image cap"
+                            />
+                            <div
+                                className="card-body"
+                                style={{ position: "relative" }}
+                            >
+                                <button
+                                    className="btn btn-outline-info"
+                                    style={{
+                                        position: "absolute",
+                                        bottom: "10px"
+                                    }}
+                                >
+                                    + Save
+                                </button>
+                            </div>
+                        </div>
                     ))}
-                </ul>
+                </div>
             </div>
         </div>
     );
