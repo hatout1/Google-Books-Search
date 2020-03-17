@@ -9,7 +9,7 @@ function App() {
         "AIzaSyAakxYQit1DRIQag9AXDESHnUc2P6lNwBk"
     );
 
-    const apiUrl = `https://www.googleapis.com/books/v1/volumes?q=${book}&filter=free-ebooks&key=${apiKey}`;
+    const apiUrl = `https://www.googleapis.com/books/v1/volumes?q=${book}&key=${apiKey}`;
 
     const handleChange = e => {
         const book = e.target.value;
@@ -58,11 +58,13 @@ function App() {
                             className="card col-xs-6 col-sm-4 col-md-3 col-lg-2 mt-5 mb-5"
                             style={{ width: "18rem", margin: "0 10px" }}
                         >
-                            <img
-                                className="card-img-top mb-3"
-                                src={book.volumeInfo.imageLinks.thumbnail}
-                                alt="Card image cap"
-                            />
+                            <a href={book.volumeInfo.previewLink}>
+                                <img
+                                    className="card-img-top mb-3"
+                                    src={book.volumeInfo.imageLinks.thumbnail}
+                                    alt="Card image cap"
+                                />
+                            </a>
                             <div
                                 className="card-body"
                                 style={{ position: "relative" }}
